@@ -1,9 +1,9 @@
-### Skeleton
+### Skeleton 的实现
 
 众所周知前端是一个注重用户体验的职业，本文的探讨重点是一个提升用户体验的 **(骨架屏)Skeleton Screen** 的实现。
 
 
-![this](images/skeleton/page.jpg)
+![this](page.jpg)
 
 上面就是一个骨架屏，它的作用就是给用户一种页面提前渲染的错觉，所以骨架屏也就是空页面和真实页面之间的一种过度页面，我们把在首屏加载或是数据请求开始和返回的时间差内，在页面中显示出正常页面中的 **占位(placeholder)** 称之为 **骨架屏**。 
 
@@ -20,7 +20,7 @@
 
 以一个很常见的信息展示 Card 组件开始，我们去实现这个 Card 的骨架。如下图：
 
- ![skeleton](images/skeleton/skeleton.jpeg)
+ ![skeleton](skeleton.jpeg)
 
 #### <a name='css'>Skeleton with CSS</a>
 
@@ -98,11 +98,11 @@
   CSS 省略...
   以 antd Skeleton 为例， Skeleton 的工作是通过配置生成对应的 ul>li 的结构，配合 antd 的 css 文件，达到骨架的效果。但是这种在绝大部分时间中并不能满足业务场景，所以需要复写这些 li 的样式。下图为 Card 骨架在页面中的 dom 结构。
 
-   ![dom 结构](images/skeleton/real-dom.png)
+   ![dom 结构](real-dom.png)
 
    虽然这些框架可以很方便的生成对应的骨架结构，并辅以 CSS 可以达到不错的效果。当时它的局限性在于对稍微复杂一点的结构很难有很好的诠释。如下图
 
-   ![复杂骨架](images/skeleton/cpx-skeleton.jpg?)
+   ![复杂骨架](cpx-skeleton.jpg?)
 
    > 这种实现方式在应对简单的页面结构加上少量的 css 还是很方便的，但是复杂一点的布局还是需要另外一种更好的方式。
 

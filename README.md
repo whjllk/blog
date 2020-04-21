@@ -10,5 +10,5 @@
 * [解剖 js 事件循环](https://github.com/ls365882248/blog/issues/2)
 
 ### 技术探索
-* [如何实现 Skeleton](https://github.com/ls365882248/blog/issues/1)
+* [如何实现 Skeleton](/images/skeleton/skeleton.md)
 
