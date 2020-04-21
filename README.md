@@ -10,5 +10,5 @@
 
 ### 技术探索
 
-* [如何实现 Skeleton](/images/skeleton/skeleton.md)
+* [如何实现 Skeleton](https://github.com/ls365882248/blog/issues/1)
 
