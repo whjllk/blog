@@ -44,14 +44,6 @@
   ``` css
   background-size:
     100px 200px, /* avatar */
-    58px 200px, /* card */
-    260px 36px, /* title */
-    350px 20px, /* desc1 */
-    350px 20px, /* desc2 */
-    350px 20px; /* desc3 */
-  ```
-  再然后，去将这些元素放到制定的位置上。
-  ``` css
   background-position:
     10px 10px, /* avatar */
     0 0,  /* card */
