@@ -1,15 +1,16 @@
-### JavaScript 事件循环机制
+### JavaScript 事件循环
 
-JavaScript 是单线程的编程语言，也就是说它在同一时间内只能执行一个任务，但是面对 dom 渲染、js 执行、网络请求、浏览器执行和各种 I/O 等等。 本文会梳理下， js 是如何将这些任务按照正确的方式组合起来并执行的。
+JavaScript 是单线程的编程语言，也就是说它在同一时间内只能执行一个任务，但是同时需要处理 dom 渲染、js 执行、网络请求、浏览器执行和各种 I/O 之类的任务 本文会梳理下， js 是如何将这些任务按照正确的方式组合起来并执行的。
 
 事件机制必须要解决一下几个问题。
+
 1. 单线程如何去执行这些任务
-2. 如何处理各种涌入的事件
+2. 单线程如何处理同步任务和异步任务
 
 在弄清楚这些问题之前，来看一张图：
 ![](event-loop.png?=300x300)
 
-上图中，包含一个调用栈，一个执行队列，一个 webApis。这三个模块可以组合成一个完整的事件循环。
+上图中，包含一个调用栈，一个执行队列，一个 webApis。这三个模块形成一个完整的事件循环。
 1. 脚本被调用会触发脚本任务执行。这些任务会被压入到调用栈中等待执行。
 2. 如果在任务中遇到同步任务，任务会被直接压入栈中执行，执行结束后出栈。
 3. 如果遇到 webApis(定时器，Http)之类的异步任务，以 setTimeout 为例，定时器执行时，会被压入栈，然后执行完成，然后出栈。这个过程中，会有一个 time 的变量产生。
@@ -71,4 +72,8 @@ console.log(6);
 此时，事件循环的应该是这个样子的。
 ![](full-event.png?=300x300)
 
-> 总结一句话，任务优先级， 调用栈 > 任务队列 > 执行队列
+> 总结一句任务优先级， 同步任务 > 微任务 > 宏任务
+
+参考资料：
+* [消息队列和事件循环](https://time.geekbang.org/column/article/132931)
+* [Understanding Javascript Function Executions](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
