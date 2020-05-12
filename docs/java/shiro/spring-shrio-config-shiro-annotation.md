@@ -11,4 +11,5 @@
     <property name="securityManager" ref="securityManager"/>
 </bean>
 ```
-★★★ 若发现shiro注解不起作用的时候，需要检查上面这两个bean是否在spring-mvc.xml中被扫描，在applicationContext.xml中扫描不起作用
+★★★ 若发现shiro注解不起作用的时候，需要检查上面这两个bean是否在spring-mvc.xml中被扫描，在applicationContext.xml中扫描不起作用。
+原因：shiro注解一般是在controller中使用的，若配置在applicationContext.xml中，则会导致shiro注解无法被扫描，故不起作用
